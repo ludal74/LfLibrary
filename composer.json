@@ -5,25 +5,23 @@
     "keywords": ["abstract","utils","module base", "zf2"],
     "homepage": "https://github.com/ludal74/LfLibrary",
     "license": "MIT",
+    "homepage": "https://github.com/ludal74/LfDeveloppementLibrary",
     "authors": [
         {
-            "name": "Favre Ludovic",
-            "email": "lf.developpement@gmail.com",
+            "name": "Ludovic Favre",
+            "email": "ludovic.favre@gmail.com",
             "homepage": "http://www.ludovic-favre.fr/"
         }
     ],
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.*",
+        "zendframework/zendframework": "2.*@stable",
 		"doctrine/doctrine-orm-module": "dev-master",
 		"doctrine/doctrine-mongo-odm-module": "dev-master"
     },
     "autoload": {
         "psr-0": {
-            "LfLibrary": "src/"
-        },
-        "classmap": [
-            "./Module.php"
-        ]
+            "LfLanguageManager": "src/"
+        }
     }
 }
