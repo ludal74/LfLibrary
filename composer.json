@@ -1,5 +1,5 @@
 {
-    "name": "lf-developpement-library/library",
+    "name": "lf-developpement-library/lf-library",
     "type": "library",
     "description": "ZF2 library",
     "keywords": ["abstract","utils","module base", "zf2"],
