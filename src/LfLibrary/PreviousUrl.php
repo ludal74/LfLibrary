@@ -6,34 +6,43 @@ use Zend\Session\Container;
 
 class PreviousUrl
 {
-	protected $session = NULL;
+	static protected $session = NULL;
 	
-	public function __construct()
+	public static function createSession()
 	{
-		$this->session = new Container('previous');
+		PreviousUrl::$session = new Container('previous_url');
 	}
 	
 	/**
 	 * Example use:
 	 * App_Helpers_LastVisited::saveThis($this->_request->getRequestUri());
 	 */
-	public function saveThis($url) 
-	{		
-        $this->session->offsetSet('last', $url);
-       // PreviousUrl::$session->offsetSet('last', $url);
+	public static function saveThis($url) 
+	{	
+	    if(  PreviousUrl::$session == NULL )
+	    {
+	        PreviousUrl::createSession();
+	    }	
+	
+	    PreviousUrl::$session->offsetSet('last', $url);
+        
+       //PreviousUrl::$session->offsetSet('last', $url);
 	}
 
 	/**
 	 * I typically use redirect:
 	 * $this->_redirect(App_Helpers_LastVisited::getLastVisited());
 	 */
-	public function getLastVisited() 
+	public static function getLastVisited() 
 	{		
-		//print_r( $this->session );
+	    if( PreviousUrl::$session == NULL )
+	    {
+	        PreviousUrl::createSession();
+	    }	
 		
-		if( $this->session->offsetExists( 'last') ) 
+		if( PreviousUrl::$session->offsetExists( 'last') ) 
 		{
-			$path = $this->session->offsetGet('last');
+			$path = PreviousUrl::$session->offsetGet('last');
 			return $path;
 		}
 

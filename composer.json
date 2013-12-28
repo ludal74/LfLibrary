@@ -1,5 +1,5 @@
 {
-    "name": "lf/library",
+    "name": "lf-developpement-library/library",
     "type": "library",
     "description": "ZF2 library",
     "keywords": ["abstract","utils","module base", "zf2"],
@@ -15,11 +15,12 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*",
-		"doctrine/doctrine-orm-module": "*"		
+		"doctrine/doctrine-orm-module": "dev-master",
+		"doctrine/doctrine-mongo-odm-module": "dev-master"
     },
     "autoload": {
         "psr-0": {
-            "lf-library/abstract-controler": "src/"
+            "LfLibrary": "src/"
         },
         "classmap": [
             "./Module.php"
