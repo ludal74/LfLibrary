@@ -16,7 +16,8 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*@stable",
-		"doctrine/doctrine-orm-module": "*"
+		"doctrine/doctrine-orm-module": "0.8.*@dev",
+		"doctrine/mongodb": "1.1.*@dev"
     },
     "autoload": {
         "psr-0": {
